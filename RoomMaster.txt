@@ -1,0 +1,73 @@
+Projekta nosaukums: RoomMaster — auditoriju rezervācijas un uzraudzības sistēma
+
+1.Lokālās problēmas apraksts
+
+Skolā regulāri rodas pārpratumi, kad vairāki skolotāji vai studenti cenšas izmantot vienu un to pašu auditoriju vienlaicīgi. Trūkst centralizētas sistēmas, kas ļautu ātri pārbaudīt brīvos laikus un veikt rezervācijas. Rezultātā zūd laiks, rodas konflikti un samazinās mācību procesa efektivitāte.
+
+2.Projekta mērķis
+
+Izstrādāt ērtu risinājumu, kas reāllaikā rāda katras auditorijas statusu, ļauj rezervēt brīvos laika posmus un kopumā nodrošina pārskatāmu informāciju par telpu noslogotību. Šādi samazināsies dubulto rezervāciju risks, tiks radīta skaidra sistēma un atvieglota auditoriju pārvaldība skolas administrācijai.
+
+3.Izpēte
+
+Tika veikta īsa aptauja ar vairākiem skolotājiem un administrāciju. Visi atzina, ka trūkst vienota resursa, kur iespējams ērti apskatīt un atjaunināt informāciju par katras auditorijas pieejamību. Secināts, ka nepieciešams rādīt telpas statusu arī pie ieejas, lai nebūtu jāpavada laiks, meklējot aktuālo grafiku.
+
+4.Prasības
+
+     Funkcionālās prasības
+• Autentificēšanās dažādiem lietotājiem, ieskaitot skolotājus, studentus un atsevišķu administratora lomu.
+• Rezervāciju veidošana un labošana tikai brīvos laikos.
+• Pilnvērtīgs kalendārs, kur redzams laiks un atbildīgā persona.
+• Dubultu rezervāciju bloķēšana.
+• Pārskatāma telpas statusa norāde (brīva/aizņemta) pie ieejas.
+
+     Nefunkcionālās prasības
+• Viegli lietojams tīmekļa interfeiss, kas darbojas dažādās ierīcēs.
+• Noturība pret vairākiem vienlaicīgiem lietotājiem.
+• Droša paroļu glabāšana un piekļuves tiesību kontrole.
+• Regulāra datu rezerves kopiju veidošana.
+
+5.Risinājuma arhitektūra
+
+Serveris apstrādā lietotāju pieprasījumus, pārvalda datus par rezervācijām un lietotāju tiesībām. Pārlūkprogrammas saskarne parāda kalendāru un ļauj veidot rezervācijas. Datu bāzē glabājas informācija par telpām un to aizņemtību. Mikrodators ar mazu ekrānu pie auditorijas durvīm nodrošina reāllaika statusa atjaunošanu.
+
+6.Izmantotās tehnoloģijas un rīki
+
+Tīmekļa lietotni iespējams veidot ar Python vai JavaScript ietvaru. Datu uzglabāšanai ieteicams izmantot relāciju datubāzi. Displejs pie auditorijas durvīm darbojas, izmantojot mikrokontrolieri (Raspberry Pi vai līdzvērtīgu). Projekta pirmkods un dokumentācija tiek uzturēti GitHub repozitorijā.
+
+7.Izstrādes plāns pa sprintiem
+
+1. sprints
+Repozitorija izveide un pamata projekts. Datu modeļu izveide (lietotāji, auditorijas, rezervācijas). Autentificēšanās funkcijas.
+
+2. sprints
+Kalendāra saskarne un rezervāciju funkcionalitāte. API izveide rezervāciju pārvaldībai un testēšana.
+
+3. sprints
+Aparatūras pieslēgums un statusa rādījums uz ekrāna. Paziņojumu sistēmas izveide par tuvojošos rezervācijas laiku.
+
+4. sprints
+Pilna sistēmas testēšana un veiktspējas optimizācija. Drošības konfigurācija, dokumentācijas sagatavošana un sistēmas izvietošana serverī vai skolas lokālajā tīklā.
+
+8.Testēšana
+
+Pārbauda atsevišķu moduļu darbību un saskarni starp serveri un klientu. Veic lietotāju scenāriju testus, simulējot dažādus pieprasījumus. Aparatūras pusē pārbauda, vai ekrāns pareizi atjaunina datus un nesagādā problēmas tīkla pārrāvumu gadījumā.
+
+9.Izvietošana
+
+Servera daļa tiek izvietota skolas serverī vai mākonī. Datu bāzē tiek uzstādīta atbilstoša tabulu struktūra. Mikrodatori ar displejiem pievienojas tīklam un regulāri pieprasa informāciju par auditorijas statusu.
+
+10.Piemērs GitHub repozitorija struktūrai
+
+RoomMaster
+├── doc
+│ └── Technical_Specification.pdf
+├── src
+│ ├── backend
+│ └── frontend
+├── hardware
+└── README.md
+
+11.Secinājumi
+
+RoomMaster sistēma nodrošina centralizētu pieeju auditoriju rezervācijām, kā arī piedāvā pārskatāmu grafiku un vienkāršu statusa attēlojumu uz vietas. Šādi tiek samazināti konflikti, atvieglota resursu pārvaldība un uzlabota mācību procesa efektivitāte.
